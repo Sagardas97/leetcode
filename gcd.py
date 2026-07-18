@@ -22,7 +22,14 @@ class Solution:
             if set(self.modulus(nums,i))=={0}:
                 alls.append(i)
         return max(alls)
-    
+    def findGCD_minmax(self,nums) -> int:
+        high,low = max(nums),min(nums)
+        mul = self.mul(low)
+        alls=[]
+        for i in mul:
+            if high%i==0:
+                alls.append(i)
+        return max(alls)
         
 gg = Solution()
 print(gg.findGCD(l))
